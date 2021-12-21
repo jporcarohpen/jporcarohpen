@@ -72,20 +72,7 @@ resource "aws_dynamodb_table" "table2" {
   range_key    = "title"
 
   dynamic "attribute" {
-    for_each = [
-      {
-        name = "id"
-        type = "N"
-      },
-      {
-        name = "title"
-        type = "S"
-      },
-      {
-        name = "age"
-        type = "N"
-      }
-    ]
+    for_each = local.table2_attributes
 
     content {
       name = attribute.value.name
