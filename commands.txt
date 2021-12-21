@@ -1,0 +1,7 @@
+terraform init
+terraform validate
+terraform plan -out plan.tfplan
+terraform apply "plan.tfplan"
+terraform apply -replace="aws_dynamodb_table.table1"
+terraform apply -replace="aws_dynamodb_table.table1[0]"
+terraform destroy
