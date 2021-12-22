@@ -5,4 +5,5 @@ terraform apply "plan.tfplan"
 terraform apply -replace="aws_dynamodb_table.table1"
 terraform apply -replace="aws_dynamodb_table.table1[0]"
 terraform apply -replace="aws_dynamodb_table.table1" -replace="aws_dynamodb_table.table2"
+terraform apply -replace="module.table3.aws_dynamodb_table.table"
 terraform destroy
